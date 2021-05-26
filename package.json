@@ -1,0 +1,22 @@
+{
+  "name": "wxapp_axios",
+  "version": "1.0.0",
+  "description": "小程序默认模版",
+  "main": "main.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "dependencies": {
+    "axios": "^0.21.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@deploy.gitlab.nbyuyuan.com:22022/frontend/wxapp_default.git"
+  },
+  "author": "",
+  "license": "ISC"
+}

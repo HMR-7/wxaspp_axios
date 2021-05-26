@@ -1,0 +1,13 @@
+#忽略编译包、编译文件
+unpackage
+/unpackage
+.DS_Store
+#忽略npm拓展包
+/node_modules
+node_modules
+#忽略公共文件
+#static
+#/static
+#忽略后台域名文件
+siteinfo
+/siteinfo
