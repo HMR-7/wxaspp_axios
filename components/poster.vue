@@ -1,21 +1,17 @@
 <template>
   <view class="content">
     <view class="canvas_show">
-      <canvas
-        canvasId="shareCanvas"
-        :style="'width:' + width + 'px;height:' + height + 'px'"
-      ></canvas>
-    </view> 
+      <canvas canvasId="shareCanvas" :style="'width:' + width + 'px;height:' + height + 'px'"></canvas>
+    </view>
   </view>
 </template>
 <script>
 export default {
   props: {
-    // posterObj:Object,/* 画布宽度和高度-width、height；海报图横纵位置+宽高：img_x,img_y,img_widht,img_height, */
     width: Number /* 画布宽度 */,
     height: Number /* 画布高度 */,
     imgObj: Object /* 海报图大小位置对象 */,
-    qrCodeObj: Object /* 二维码大小位置对象 */
+    qrCodeObj: Object /* 二维码大小位置对象 */,
   },
   data() {
     return {};
@@ -30,7 +26,7 @@ export default {
     creat_img() {
       uni.showLoading({
         title: "生成海报中",
-        mask: true
+        mask: true,
       });
       let t = this,
         { x, y, width, height } = t.imgObj,
@@ -38,7 +34,7 @@ export default {
       const ctx = uni.createCanvasContext("shareCanvas", t);
       ctx.drawImage("/static/images/logo.png", x, y, width, height); //绘制黑色背景图
       ctx.drawImage("/static/images/pic_hd.png", q_x, q_y, q_width, q_height); //绘制黑色背景图
-      setTimeout(function() {
+      setTimeout(function () {
         ctx.draw(true, t.canvasToTempFilePath());
       }, 200);
     },
@@ -46,7 +42,7 @@ export default {
       let t = this,
         width = t.width,
         height = t.height;
-      setTimeout(function() {
+      setTimeout(function () {
         uni.canvasToTempFilePath(
           {
             x: 0,
@@ -56,7 +52,7 @@ export default {
             fileType: "png",
             quality: 1,
             canvasId: "shareCanvas",
-            success: function(res) {
+            success: function (res) {
               uni.hideLoading();
               t.shareImg = res.tempFilePath;
               console.log(t.shareImg);
@@ -65,22 +61,22 @@ export default {
                   current: t.shareImg, // 当前显示图片的http链接
                   urls: [t.shareImg], // 需要预览的图片http链接列表
                   success() {
-                    setTimeout(function() {
+                    setTimeout(function () {
                       uni.hideLoading();
                     }, 600);
-                  }
+                  },
                 });
               }
             },
             fail(res) {
               console.log(res);
-            }
+            },
           },
           t
         );
       }, 1000);
-    }
-  }
+    },
+  },
 };
 </script>
 <style lang='scss' scoped>
