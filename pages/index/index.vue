@@ -1,8 +1,10 @@
 <template>
   <view class="content">
+    <!-- 轮播图组件 -->
     <view class="header-swiper">
       <swiper-box :funcType="'toBannerUrl'"></swiper-box>
     </view>
+    <!-- 海报组件测试 -->
     <view class="text-area">
       <text class="title">{{ title }}</text>
     </view>
@@ -16,18 +18,20 @@
 /* 导入模拟数据 */
 /* 导入自定义组件 */
 import swiperBox from "@/components/swiper";
+import posterBox from "@/components/poster";
 /* 导入状态管理store */
 export default {
   components: {
-    swiperBox
+    swiperBox,
+    posterBox,
   },
   data() {
     return {
-      title: "首页"
+      title: "首页",
     };
   },
   onLoad() {},
-  methods: {}
+  methods: {},
 };
 </script>
 

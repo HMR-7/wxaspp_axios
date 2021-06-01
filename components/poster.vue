@@ -11,6 +11,7 @@
 <script>
 export default {
   props: {
+    // posterObj:Object,/* 画布宽度和高度-width、height；海报图横纵位置+宽高：img_x,img_y,img_widht,img_height, */
     width: Number /* 画布宽度 */,
     height: Number /* 画布高度 */,
     imgObj: Object /* 海报图大小位置对象 */,
