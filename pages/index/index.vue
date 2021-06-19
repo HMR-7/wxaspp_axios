@@ -5,6 +5,13 @@
       <swiper-box :funcType="'toBannerUrl'"></swiper-box>
     </view>
     <!-- 海报组件测试 -->
+    <view class="header-poster">
+      <poster-box></poster-box>
+    </view>
+    <!-- 倒计时组件测试 -->
+    <view class="header-timer">
+      <timer-box></timer-box>
+    </view>
     <view class="text-area">
       <text class="title">{{ title }}</text>
     </view>
@@ -19,11 +26,13 @@
 /* 导入自定义组件 */
 import swiperBox from "@/components/swiper";
 import posterBox from "@/components/poster";
+import timerBox from "@/components/timer";
 /* 导入状态管理store */
 export default {
   components: {
     swiperBox,
     posterBox,
+    timerBox,
   },
   data() {
     return {
